@@ -157,7 +157,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     href: 'https://www.benpossystems.com/main/',
     color: '#6EE7B7',
-    video: 'public/benpos.mp4',
+    video: '/benpos.mp4',
   },
   {
     title: 'JK Hardware',
@@ -166,7 +166,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     href: 'https://jkhardware.netlify.app/',
     color: '#60A5FA',
-    video: 'public/jk.mp4',
+    video: '/jk.mp4',
   },
   {
     title: 'Pahrump Realtor',
@@ -175,7 +175,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript'],
     href: 'https://pahrump-realtor.netlify.app/',
     color: '#C084FC',
-    video: 'public/realtor.mp4',
+    video: '/realtor.mp4',
   },
   {
     title: 'Time Tracking System',
@@ -184,7 +184,7 @@ const projects = [
     tags: ['Express.js', 'Node.js', 'React', 'Firebase (user authentication)'],
     href: 'https://mini-hcm-24594.web.app/',
     color: '#FBBF24',
-    video: 'public/time.mp4',
+    video: '/time.mp4',
   },
 ]
 
@@ -371,7 +371,7 @@ function About() {
           {/* Photo */}
           <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <div style={{ width: 140, height: 140, borderRadius: '50%', background: 'linear-gradient(135deg,rgba(110,231,183,0.3),rgba(59,130,246,0.3))', border: '3px solid rgba(110,231,183,0.25)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src="public/profile.jpg" alt="Joash Jon Bumaat" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              <img src="/profile.jpg" alt="Joash Jon Bumaat" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={e => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span style="font-family:Syne,sans-serif;font-weight:800;font-size:36px;color:#E8EAF0">JJ</span>' }} />
             </div>
             <div style={{ textAlign: 'center' }}>
@@ -628,7 +628,7 @@ function Contact() {
               <div style={{ fontSize: 52, marginBottom: 16 }}>✅</div>
               <h3 style={{ fontFamily: syne, fontWeight: 700, fontSize: 20, color: '#6EE7B7', margin: '0 0 8px' }}>Message Sent!</h3>
               <p style={{ color: '#9CA3AF', fontSize: 14, margin: '0 0 6px', fontFamily: dm }}>Thanks for reaching out, I'll get back to you soon.</p>
-              <p style={{ color: '#6B7280', fontSize: 13, margin: '0 0 20px', fontFamily: dm }}>Check your inbox — a confirmation may have been sent to your email.</p>
+              <p style={{ color: '#6B7280', fontSize: 13, margin: '0 0 20px', fontFamily: dm }}></p>
               <button onClick={() => setStatus('idle')}
                 style={{ background: 'none', border: '1px solid #1E2536', color: '#9CA3AF', padding: '8px 20px', borderRadius: 999, cursor: 'pointer', fontSize: 13, fontFamily: dm }}>
                 Send another message
