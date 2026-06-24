@@ -518,8 +518,17 @@ function Projects() {
               onMouseEnter={e => { e.currentTarget.style.borderColor = p.color + '50'; e.currentTarget.style.boxShadow = `0 0 32px ${p.color}0D` }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#1E2536'; e.currentTarget.style.boxShadow = 'none' }}>
               <div style={{ position: 'relative', aspectRatio: '16/9', background: '#0F1117', overflow: 'hidden' }}>
-                <video src={p.video} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65, transition: 'opacity 0.3s' }} muted loop playsInline
-                  onMouseEnter={e => { e.target.play(); e.target.style.opacity = 1 }}
+                <video src={p.video} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65, transition: 'opacity 0.3s' }} muted loop playsInline preload="auto"
+                   onMouseEnter={e => {
+                      const v = e.target
+                      v.style.opacity = 1
+                      if (v.readyState >= 3) {
+                        v.play().catch(() => {})
+                      } else {
+                        v.load()
+                        v.addEventListener('canplay', () => v.play().catch(() => {}), { once: true })
+                      }
+                    }}
                   onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0; e.target.style.opacity = 0.65 }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #161B27 0%, transparent 60%)', pointerEvents: 'none' }} />
               </div>
