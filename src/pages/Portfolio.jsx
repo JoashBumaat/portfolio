@@ -154,7 +154,7 @@ const projects = [
     title: 'Benpos Systems',
     type: 'Internship',
     desc: 'Modern POS platform with fast checkout, responsive design, and secure payments.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'React'],
     href: 'https://www.benpossystems.com/main/',
     color: '#6EE7B7',
     video: '/benpos.mp4',
@@ -692,6 +692,7 @@ export default function Portfolio() {
     <>
       <style>{`
         @media(max-width:768px){.desktop-nav{display:none !important}.mobile-menu-btn{display:block !important}}
+
       `}</style>
       <Navbar />
       <main>
